@@ -2,9 +2,13 @@
 This is the main module of Deduplicator.
 """
 import redis
+import os
+from dotenv import load_dotenv
 from utils import iterate_dirs, md5checksum
 
-MAIN_PATH = "/home/anselmos/Pictures"
+load_dotenv()
+
+MAIN_PATH = os.getenv('MAIN_PATH')
 
 
 def main():
